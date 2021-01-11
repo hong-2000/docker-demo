@@ -43,3 +43,14 @@ sudo vim /etc/docker/daemon.json
 3. 重启服务<br>
 systemctl daemon-reload <br>
 systemctl restart docker
+
+## 发布镜像到阿里云容器服务
+1. 官方教程<br>
+https://cr.console.aliyun.com/repository/cn-hangzhou/hong-2000/docker-test/details<br>
+命名空间 hong-2000 <br>仓库名称 docker-test
+2. 推送镜像<br>
+[root@localhost docker]# **sudo docker login --username=xxx registry.cn-hangzhou.aliyuncs.com**<br>
+Password: <br>
+[root@localhost docker]# **sudo docker tag 18f1fbf781e5 registry.cn-hangzhou.aliyuncs.com/hong-2000/docker-test:1.0**<br>
+[root@localhost docker]# **sudo docker push registry.cn-hangzhou.aliyuncs.com/hong-2000/docker-test:1.0**<br>
+The push refers to repository [registry.cn-hangzhou.aliyuncs.com/hong-2000/docker-test]<br>
