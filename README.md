@@ -32,3 +32,14 @@ docker run -d -P --name docker-springboot-test hong-2000
 docker ps
 5. 访问端口<br>
 curl localhost:49153/hello
+
+## 设置阿里云镜像地址
+1. 新建或修改文件<br>
+sudo vim /etc/docker/daemon.json
+2. 编辑内容<br>
+        {
+         "registry-mirrors":["https://6kx4zyno.mirror.aliyuncs.com"]
+        }
+3. 重启服务<br>
+systemctl daemon-reload <br>
+systemctl restart docker
